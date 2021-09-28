@@ -8,10 +8,12 @@ namespace SudentClubApp
         private string firstName;
         private string lastName;
         private string email;
-        private static int queueId;
+        private static int queueId = 0;
 
         public Student(string firstName = null, string lastName = null, string email = null)
         {
+            Student.queueId++;
+            this.id = Student.queueId;
             this.firstName = firstName;
             this.lastName = lastName;
             this.email = email;
@@ -24,6 +26,13 @@ namespace SudentClubApp
             this.lastName = lastName;
             this.email = email;
         }
+
+        // public Student(string firstName = null, string lastName = null, string email = null)
+        // {
+        //     Student.queueId = 0;
+        //     
+        //
+        // }
 
         public int Id
         {
