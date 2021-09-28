@@ -16,8 +16,14 @@ namespace SudentClubApp
             this.lastName = lastName;
             this.email = email;
         }
-        
-        
+
+        public Student(int id = default, string firstName = null, string lastName = null, string email = null)
+        {
+            this.id = id;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+        }
 
         public int Id
         {
