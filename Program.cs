@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using NLog;
 using NLog.Web;
@@ -7,6 +8,7 @@ namespace SudentClubApp
 {
     class Program
     {
+        private string fileName = "students.csv";
         private List<Student> students;
         private NLog.Logger logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
@@ -30,12 +32,31 @@ namespace SudentClubApp
         public void DefaultPopulate()
         {
             this.students = new List<Student>();
-            this.students.Add(new Student("Andy","Gunn","andrewgun31@gmail.com"));
-            this.students.Add(new Student("Boby","Gunn","bobby@gmail.com"));
-            this.students.Add(new Student("Bobdsdy","Gfsdfunn","@gmail.com"));
-            this.students.Add(new Student("gsadgs","Gundsn","gmail.com"));
-            
+            this.students.Add(new Student("Andy", "Gunn", "andrewgun31@gmail.com"));
+            this.students.Add(new Student("Boby", "Gunn", "bobby@gmail.com"));
+            this.students.Add(new Student("Bobdsdy", "Gfsdfunn", "@gmail.com"));
+            this.students.Add(new Student("gsadgs", "Gundsn", "gmail.com"));
+
+            try
+            {
+                StreamWriter writer = new StreamWriter(this.fileName, true);
+
+                foreach (Student s in this.students)
+                {
+                    Student.QueueId++;
+                    writer.WriteLine($"{Student.QueueId} {s.FirstName} {s.LastName}, {s.Email}");
+                }
+
+                writer.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                this.logger.Error(e);
+                throw;
+            }
         }
+
         public void StudentsList()
         {
             int id = 0;
@@ -75,7 +96,6 @@ namespace SudentClubApp
 
         static void Main(string[] args)
         {
-            
             Program p = new Program();
             //p.logger.Error("error");
 

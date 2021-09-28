@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80bcebe8-84b2-47e1-909a-4efad9294bf6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/File.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nlog.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SudentClubApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SudentClubApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Student.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Student.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SudentClubApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SudentClubApp.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +16,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1ymIrZMhBm9s6xz9kWxXZe8lOve" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -66,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632850539135</updated>
-      <workItem from="1632850546766" duration="6646000" />
+      <workItem from="1632850546766" duration="7814000" />
     </task>
     <servers />
   </component>

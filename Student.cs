@@ -8,7 +8,7 @@ namespace SudentClubApp
         private string firstName;
         private string lastName;
         private string email;
-        private static int queueId = 0;
+        private static int queueId;
 
         public Student(string firstName = null, string lastName = null, string email = null)
         {
