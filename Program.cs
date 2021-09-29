@@ -17,10 +17,8 @@ namespace SudentClubApp
         {
             Students = new List<Student>();
         }
-        
 
-        
-        
+
         public void DefaultPopulate()
         {
             Students = new List<Student>();
@@ -71,32 +69,51 @@ namespace SudentClubApp
                 //throw;
             }
         }
-        
+
+        public void DeleteStudent(string id)
+        {
+
+            var s = Students.Find(student => student.FirstName == id);
+
+            Console.WriteLine(s);
 
 
-        
+        }
+
         public void StudentsList2()
         {
             var id = 0;
 
 
-            StreamReader reader = new StreamReader(fileName);
-
-            if (!System.IO.File.Exists(fileName))
+            try
             {
-                DefaultPopulate();
-            }
+                if (!System.IO.File.Exists(fileName))
+                {
+                    DefaultPopulate();
+                }
 
-            while (!reader.EndOfStream)
+                StreamReader reader = new StreamReader(fileName);
+
+                while (!reader.EndOfStream)
+                {
+                    string[] lineData = reader.ReadLine().Split(",");
+                    Students.Add(new Student(Convert.ToInt32(lineData[0]), lineData[1], lineData[2], lineData[3]));
+                }
+
+                reader.Close();
+
+                foreach (Student s in Students)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+            catch (Exception e)
             {
-
-                string[] lineData = reader.ReadLine().Split(",");
-                
-                Students.Add();
+                Console.WriteLine(e);
+                logger.Error(e);
+                throw;
             }
-            
         }
-        public void HomeList()
 
         public void HomeList()
         {
@@ -113,8 +130,10 @@ namespace SudentClubApp
             Program p = new Program();
             //p.logger.Error("error");
 
-            p.DefaultPopulate();
-            p.StudentsList();
+            //p.DefaultPopulate();
+            p.StudentsList2();
+            
+            p.DeleteStudent("Andy");
         }
     }
 }

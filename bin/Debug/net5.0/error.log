@@ -1,2 +1,10 @@
 2021-09-28 14:13:12.6823|ERROR|SudentClubApp.Program|error
 2021-09-28 14:28:34.8237|ERROR|SudentClubApp.Program|error
+2021-09-29 15:48:10.9066|ERROR|SudentClubApp.Program|System.IO.FileNotFoundException: Could not find file 'C:\Users\Andy\RiderProjects\SudentClubApp\SudentClubApp\bin\Debug\net5.0\students.csv'.
+File name: 'C:\Users\Andy\RiderProjects\SudentClubApp\SudentClubApp\bin\Debug\net5.0\students.csv'
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.StreamReader..ctor(String path)
+   at SudentClubApp.Program.StudentsList2() in C:\Users\Andy\RiderProjects\SudentClubApp\SudentClubApp\Program.cs:line 81
