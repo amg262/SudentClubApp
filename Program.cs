@@ -36,7 +36,7 @@ namespace SudentClubApp
                 foreach (Student s in Students)
                 {
                     Student.QueueId++;
-                    writer.WriteLine($"{Student.QueueId} {s.FirstName} {s.LastName}, {s.Email}");
+                    writer.WriteLine($"{Student.QueueId}, {s.FirstName}, {s.LastName}, {s.Email}");
                 }
 
                 writer.Close();
@@ -89,7 +89,10 @@ namespace SudentClubApp
 
             while (!reader.EndOfStream)
             {
-                Students.Add(reader.ReadLine());
+
+                string[] lineData = reader.ReadLine().Split(",");
+                
+                Students.Add();
             }
             
         }
