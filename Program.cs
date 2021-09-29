@@ -73,9 +73,16 @@ namespace SudentClubApp
         public void DeleteStudent(string id)
         {
 
-            var s = Students.Find(student => student.FirstName == id);
+            Student s = Students.Find(student => student.FirstName == id);
 
-            Console.WriteLine(s);
+            Console.WriteLine(Students.Remove(s));
+            
+            //Console.WriteLine(s);
+
+            foreach (var ss in Students)
+            {
+                Console.WriteLine(ss);
+            }
 
 
         }
