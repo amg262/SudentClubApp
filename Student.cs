@@ -1,67 +1,42 @@
-﻿using System;
-
-namespace SudentClubApp
+﻿namespace SudentClubApp
 {
     public class Student
     {
-        private int id;
-        private string firstName;
-        private string lastName;
-        private string email;
-        private static int queueId;
-
         public Student(string firstName = null, string lastName = null, string email = null)
         {
-            Student.queueId++;
-            this.id = Student.queueId;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.email = email;
+            QueueId++;
+            Id = QueueId;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
         }
 
         public Student(int id = default, string firstName = null, string lastName = null, string email = null)
         {
-            this.id = id;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.email = email;
+            this.Id = id;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
         }
 
-        // public Student(string firstName = null, string lastName = null, string email = null)
-        // {
-        //     Student.queueId = 0;
-        //     
-        //
-        // }
 
-        public int Id
-        {
-            get => id;
-            set => id = value;
-        }
+        public int Id { get; set; }
 
-        public static int QueueId
-        {
-            get => queueId;
-            set => queueId = value;
-        }
+        public static int QueueId { get; set; }
 
-        public string FirstName
-        {
-            get => firstName;
-            set => firstName = value;
-        }
+        public string FirstName { get; set; }
 
-        public string LastName
-        {
-            get => lastName;
-            set => lastName = value;
-        }
+        public string LastName { get; set; }
 
-        public string Email
+        public string Email { get; set; }
+
+
+        public override string ToString()
         {
-            get => email;
-            set => email = value;
+            return ($"{Id}. | " +
+                    $"{FirstName} " +
+                    $"{LastName} | " +
+                    $"{Email}");
         }
 
         public string Print()

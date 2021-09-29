@@ -9,39 +9,31 @@ namespace SudentClubApp
     class Program
     {
         private string fileName = "students.csv";
-        private List<Student> students;
+        private List<Student> Students { get; set; }
         private NLog.Logger logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
 
         public Program()
         {
-            this.students = new List<Student>();
+            Students = new List<Student>();
         }
+        
 
-        public Program(List<Student> students = null)
-        {
-            this.students = students;
-        }
-
-        public List<Student> Students
-        {
-            get => students;
-            set => students = value;
-        }
-
+        
+        
         public void DefaultPopulate()
         {
-            this.students = new List<Student>();
-            this.students.Add(new Student("Andy", "Gunn", "andrewgun31@gmail.com"));
-            this.students.Add(new Student("Boby", "Gunn", "bobby@gmail.com"));
-            this.students.Add(new Student("Bobdsdy", "Gfsdfunn", "@gmail.com"));
-            this.students.Add(new Student("gsadgs", "Gundsn", "gmail.com"));
+            Students = new List<Student>();
+            Students.Add(new Student("Andy", "Gunn", "andrewgun31@gmail.com"));
+            Students.Add(new Student("Boby", "Gunn", "bobby@gmail.com"));
+            Students.Add(new Student("Bobdsdy", "Gfsdfunn", "@gmail.com"));
+            Students.Add(new Student("gsadgs", "Gundsn", "gmail.com"));
 
             try
             {
                 StreamWriter writer = new StreamWriter(this.fileName, true);
 
-                foreach (Student s in this.students)
+                foreach (Student s in Students)
                 {
                     Student.QueueId++;
                     writer.WriteLine($"{Student.QueueId} {s.FirstName} {s.LastName}, {s.Email}");
@@ -68,11 +60,7 @@ namespace SudentClubApp
                     foreach (Student s in this.Students)
                     {
                         id++;
-                        Console.WriteLine($"{id}. | " +
-                                          $"{s.Id} -- " +
-                                          $"{s.FirstName} " +
-                                          $"{s.LastName} | " +
-                                          $"{s.Email}");
+                        Console.WriteLine(s);
                     }
                 }
             }
@@ -83,6 +71,29 @@ namespace SudentClubApp
                 //throw;
             }
         }
+        
+
+
+        
+        public void StudentsList2()
+        {
+            var id = 0;
+
+
+            StreamReader reader = new StreamReader(fileName);
+
+            if (!System.IO.File.Exists(fileName))
+            {
+                DefaultPopulate();
+            }
+
+            while (!reader.EndOfStream)
+            {
+                Students.Add(reader.ReadLine());
+            }
+            
+        }
+        public void HomeList()
 
         public void HomeList()
         {
