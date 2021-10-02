@@ -8,3 +8,7 @@ File name: 'C:\Users\Andy\RiderProjects\SudentClubApp\SudentClubApp\bin\Debug\ne
    at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
    at System.IO.StreamReader..ctor(String path)
    at SudentClubApp.Program.StudentsList2() in C:\Users\Andy\RiderProjects\SudentClubApp\SudentClubApp\Program.cs:line 81
+2021-10-02 18:04:32.3341|ERROR|SudentClubApp.Program|System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNextRare()
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at SudentClubApp.Program.DeleteStudentOption() in C:\Users\Andy\RiderProjects\SudentClubApp\SudentClubApp\Program.cs:line 153
