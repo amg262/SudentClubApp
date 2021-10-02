@@ -230,31 +230,34 @@ namespace SudentClubApp
             // p.DeleteStudent("Andy");
 
             int choice = p.HomeList();
+
+                switch (choice)
+                {
+                    case 1:
+                        p.AddStudentOption();
+                        break;
+                    case 2:
+                        p.AddStudentOption();
+                        p.ListStudentsOption();
+                        p.DeleteStudentOption();
+                        
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+                        p.ListStudentsOption();
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    default:
+                        break;
+                }
             
-            switch (choice)
-            {
-                case 1:
-                    p.AddStudentOption();
-                    break;
-                case 2:
-                    p.DeleteStudentOption();
-                    p.ListStudentsOption();
-                    break;
-                case 3:
-                    
-                    break;
-                case 4:
-                    p.ListStudentsOption();
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;
-                default:
-                    break;
-            }
         }
     }
 }
