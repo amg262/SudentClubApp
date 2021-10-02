@@ -137,7 +137,7 @@ namespace SudentClubApp
             Program p = new Program();
             //p.logger.Error("error");
 
-            //p.DefaultPopulate();
+            p.DefaultPopulate();
             p.StudentsList2();
             
             p.DeleteStudent("Andy");
