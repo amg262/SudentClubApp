@@ -8,3 +8,5 @@ File name: 'C:\Users\Andy\RiderProjects\SudentClubApp\SudentClubApp\bin\Debug\ne
    at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
    at System.IO.StreamReader..ctor(String path)
    at SudentClubApp.Program.StudentsList2() in C:\Users\Andy\RiderProjects\SudentClubApp\SudentClubApp\Program.cs:line 81
+2021-10-02 17:01:47.8669|WARN|SudentClubApp.Program|System.NullReferenceException: Object reference not set to an instance of an object.
+   at SudentClubApp.Program.DeleteFoundStudent(String keyword) in C:\Users\Andy\RiderProjects\SudentClubApp\SudentClubApp\Program.cs:line 187

@@ -12,6 +12,7 @@
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/SudentClubApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/SudentClubApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/SudentClubApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/SudentClubApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/SudentClubApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/SudentClubApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/students.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/students.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/SudentClubApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/SudentClubApp.dll" afterDir="false" />
@@ -82,7 +83,8 @@
       <option name="presentableId" value="Default" />
       <updated>1632850539135</updated>
       <workItem from="1632850546766" duration="9128000" />
-      <workItem from="1632934855928" duration="4307000" />
+      <workItem from="1632934855928" duration="4569000" />
+      <workItem from="1633210297920" duration="3107000" />
     </task>
     <servers />
   </component>
