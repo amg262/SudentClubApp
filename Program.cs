@@ -19,35 +19,6 @@ namespace SudentClubApp
             Students = new List<Student>();
         }
 
-
-        public void DefaultPopulate()
-        {
-            Students = new List<Student>();
-            Students.Add(new Student("Andy", "Gunn", "andrewgun31@gmail.com"));
-            Students.Add(new Student("Boby", "Gunn", "bobby@gmail.com"));
-            Students.Add(new Student("Bobdsdy", "Gfsdfunn", "@gmail.com"));
-            Students.Add(new Student("gsadgs", "Gundsn", "gmail.com"));
-
-            try
-            {
-                StreamWriter writer = new StreamWriter(this.fileName, true);
-
-                foreach (Student s in Students)
-                {
-                    Student.QueueId++;
-                    writer.WriteLine($"{Student.QueueId}, {s.FirstName}, {s.LastName}, {s.Email}");
-                }
-
-                writer.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                this.logger.Error(e);
-                throw;
-            }
-        }
-
         public void StudentsList()
         {
             int id = 0;
@@ -85,47 +56,13 @@ namespace SudentClubApp
             }
         }
 
-        public void StudentsList2()
-        {
-            var id = 0;
-
-
-            try
-            {
-                if (!System.IO.File.Exists(fileName))
-                {
-                    DefaultPopulate();
-                }
-
-                StreamReader reader = new StreamReader(fileName);
-
-                while (!reader.EndOfStream)
-                {
-                    string[] lineData = reader.ReadLine().Split(",");
-                    Students.Add(new Student(Convert.ToInt32(lineData[0]), lineData[1], lineData[2], lineData[3]));
-                }
-
-                reader.Close();
-
-                foreach (Student s in Students)
-                {
-                    Console.WriteLine(s);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                logger.Error(e);
-                throw;
-            }
-        }
 
         public void AddStudentOption()
         {
             try
             {
-                StudentFile csv = new StudentFile("students.csv");
-                
+                //StudentFile csv = new StudentFile("students.csv");
+
                 Console.Write("First Name: ");
                 string fName = Console.ReadLine();
 
@@ -137,8 +74,8 @@ namespace SudentClubApp
 
                 Student newStudent = new Student(fName, lName, email);
                 Students.Add(newStudent);
-                
-                csv.WriteToFile(Students, true);
+
+                //csv.WriteToFile(Students, true);
             }
             catch (Exception e)
             {
@@ -150,17 +87,39 @@ namespace SudentClubApp
 
         public void DeleteStudentOption()
         {
-            Console.Write("ID of Student to remove: ");
+            Console.Write("ID of Student to Remove: ");
             Int32.TryParse(Console.ReadLine(), out int idRemove);
 
-            
-            Students.RemoveAt(idRemove);
+
+            Students.RemoveAt(--idRemove);
 
             foreach (var s in Students)
             {
                 Console.WriteLine(s);
             }
-        
+        }
+
+
+        public void EditStudent()
+        {
+            int idEdit2 = 2;
+            Console.WriteLine("ID of Student to Edit: ");
+            int idEdit = Convert.ToInt32(Console.ReadLine());
+            // int id, idEdit;
+            // Int32.TryParse(Console.ReadLine(), out id);
+            // Int32.TryParse(Console.ReadLine(), out idEdit);
+            // --idEdit;
+            idEdit--;
+
+            //Students[idEdit].Id = id;
+
+            Console.WriteLine("New First Name: ");
+            Students[idEdit].FirstName = Console.ReadLine();
+            Console.WriteLine("New Last Name: ");
+            Students[idEdit].LastName = Console.ReadLine();
+
+            Console.WriteLine("New Email: ");
+            Students[idEdit].Email = Console.ReadLine();
         }
 
         public void ListStudentsOption()
@@ -185,13 +144,12 @@ namespace SudentClubApp
 
         public int HomeList()
         {
-            
-            // Students = new List<Student>();
-            // Students.Add(new Student("Andy", "Gunn", "andrewgun31@gmail.com"));
-            // Students.Add(new Student("Boby", "Gunn", "bobby@gmail.com"));
-            // Students.Add(new Student("mom", "mom", "@gmail.com"));
-            // Students.Add(new Student("dad", "dad", "gmail.com"));
-            
+            Students = new List<Student>();
+            Students.Add(new Student("Andy", "Gunn", "andrewgun31@gmail.com"));
+            Students.Add(new Student("Boby", "Gunn", "bobby@gmail.com"));
+            Students.Add(new Student("mom", "mom", "@gmail.com"));
+            Students.Add(new Student("dad", "dad", "gmail.com"));
+
             Console.WriteLine($"Student Club Management");
             Console.WriteLine($"1. Add Student");
             Console.WriteLine($"2. Delete Student");
@@ -209,44 +167,38 @@ namespace SudentClubApp
         static void Main(string[] args)
         {
             Program p = new Program();
-            
-            
-            //p.logger.Error("error");
 
-            // p.DefaultPopulate();
-            // p.StudentsList2();
-            //
-            // p.DeleteStudent("Andy");
 
             int choice = p.HomeList();
 
-                switch (choice)
-                {
-                    case 1:
-                        p.AddStudentOption();
-                        break;
-                    case 2:
-                        p.AddStudentOption();
-                        p.ListStudentsOption();
-                        p.DeleteStudentOption();
-                        
-                        break;
-                    case 3:
+            switch (choice)
+            {
+                case 1:
+                    p.AddStudentOption();
+                    break;
+                case 2:
+                    p.ListStudentsOption();
+                    p.DeleteStudentOption();
 
-                        break;
-                    case 4:
-                        p.ListStudentsOption();
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                    case 7:
-                        break;
-                    default:
-                        break;
-                }
-            
+                    break;
+                case 3:
+                    p.ListStudentsOption();
+
+                    p.EditStudent();
+                    p.ListStudentsOption();
+                    break;
+                case 4:
+                    p.ListStudentsOption();
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

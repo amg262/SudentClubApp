@@ -8,16 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80bcebe8-84b2-47e1-909a-4efad9294bf6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/StudentFile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SudentClubApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SudentClubApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/File.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Student.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Student.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/SudentClubApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/SudentClubApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/SudentClubApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/SudentClubApp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/SudentClubApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/SudentClubApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/students.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/students.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/SudentClubApp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/SudentClubApp.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/SudentClubApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/SudentClubApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/SudentClubApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/SudentClubApp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/SudentClubApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/SudentClubApp.dll" afterDir="false" />
@@ -89,7 +84,7 @@
       <workItem from="1632934855928" duration="4307000" />
       <workItem from="1633289188888" duration="1299000" />
       <workItem from="1633313972390" duration="535000" />
-      <workItem from="1633455687084" duration="1412000" />
+      <workItem from="1633455687084" duration="2311000" />
     </task>
     <servers />
   </component>
