@@ -2,21 +2,25 @@
 {
     public class Student
     {
+        public Student()
+        {
+        }
+
         public Student(string firstName = null, string lastName = null, string email = null)
         {
             //QueueId++;
             Id = QueueId++;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Email = email;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
         }
 
         public Student(int id = default, string firstName = null, string lastName = null, string email = null)
         {
-            this.Id = id;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Email = email;
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
         }
 
 
@@ -33,12 +37,12 @@
 
         public override string ToString()
         {
-            return ($"{Id},{FirstName}, {LastName}, {Email}");
+            return $"{Id},{FirstName}, {LastName}, {Email}";
         }
 
         public string Print()
         {
-            return ($"{Id},{FirstName}, {LastName}, {Email}");
+            return $"{Id},{FirstName}, {LastName}, {Email}";
         }
     }
 }

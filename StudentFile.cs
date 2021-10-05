@@ -11,12 +11,6 @@ namespace StudentClubApp
     {
         private static Logger logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
-        public List<string> Preset = new()
-        {
-            "TicketID,Summary,Status,Priority,Submitter,Assigned,Watching",
-            "1,This is a bug student,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones"
-        };
-
         public StudentFile(string filePath, List<Student> studentList = null)
         {
             FilePath = filePath;
@@ -37,26 +31,12 @@ namespace StudentClubApp
 
         public void WriteToFile(List<Student> students, bool append = false)
         {
-            
             Writer = new StreamWriter(FilePath, append);
 
-            
-            if (!File.Exists(FilePath))
-            {
-                //Writer.WriteLine(Preset[0]);
-                //Writer.WriteLine(Preset[1]);
-            }
-
-            foreach (var s in students)
-            {
-                Writer.WriteLine(s.ToString());
-
-            }
+            foreach (var s in students) Writer.WriteLine(s.ToString());
 
             Writer.Close();
         }
-        
-        
         public void ReadFromFile()
         {
             Reader = new StreamReader(FilePath);
