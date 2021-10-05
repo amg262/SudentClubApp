@@ -33,15 +33,12 @@
 
         public override string ToString()
         {
-            return ($"{Id}. | " +
-                    $"{FirstName} " +
-                    $"{LastName} | " +
-                    $"{Email}");
+            return ($"{Id},{FirstName}, {LastName}, {Email}");
         }
 
         public string Print()
         {
-            return $"{FirstName} {LastName} | {Email}";
+            return ($"{Id},{FirstName}, {LastName}, {Email}");
         }
     }
 }

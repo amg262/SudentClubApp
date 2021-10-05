@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using NLog;
 using NLog.Web;
+using StudentClubApp;
 
 namespace SudentClubApp
 {
@@ -123,6 +124,8 @@ namespace SudentClubApp
         {
             try
             {
+                StudentFile csv = new StudentFile("students.csv");
+                
                 Console.Write("First Name: ");
                 string fName = Console.ReadLine();
 
@@ -134,6 +137,8 @@ namespace SudentClubApp
 
                 Student newStudent = new Student(fName, lName, email);
                 Students.Add(newStudent);
+                
+                csv.WriteToFile(Students, true);
             }
             catch (Exception e)
             {
@@ -155,23 +160,7 @@ namespace SudentClubApp
             {
                 Console.WriteLine(s);
             }
-            // try
-            // {
-            //     foreach (Student s in Students)
-            //     {
-            //         if (s.Id == idRemove)
-            //         {
-            //             //Students.Remove(s);
-            //             Students.RemoveAt(--idRemove);
-            //         }
-            //     }
-            // }
-            // catch (Exception e)
-            // {
-            //     logger.Error(e);
-            //     Console.WriteLine(e);
-            //     throw;
-            // }
+        
         }
 
         public void ListStudentsOption()
@@ -197,11 +186,11 @@ namespace SudentClubApp
         public int HomeList()
         {
             
-            Students = new List<Student>();
-            Students.Add(new Student("Andy", "Gunn", "andrewgun31@gmail.com"));
-            Students.Add(new Student("Boby", "Gunn", "bobby@gmail.com"));
-            Students.Add(new Student("mom", "mom", "@gmail.com"));
-            Students.Add(new Student("dad", "dad", "gmail.com"));
+            // Students = new List<Student>();
+            // Students.Add(new Student("Andy", "Gunn", "andrewgun31@gmail.com"));
+            // Students.Add(new Student("Boby", "Gunn", "bobby@gmail.com"));
+            // Students.Add(new Student("mom", "mom", "@gmail.com"));
+            // Students.Add(new Student("dad", "dad", "gmail.com"));
             
             Console.WriteLine($"Student Club Management");
             Console.WriteLine($"1. Add Student");
