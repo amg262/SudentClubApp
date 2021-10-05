@@ -4,8 +4,8 @@
     {
         public Student(string firstName = null, string lastName = null, string email = null)
         {
-            QueueId++;
-            Id = QueueId;
+            //QueueId++;
+            Id = QueueId++;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;

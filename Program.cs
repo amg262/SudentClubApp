@@ -76,6 +76,8 @@ namespace SudentClubApp
                 Students.Add(newStudent);
 
                 //csv.WriteToFile(Students, true);
+                RefreshPrompt();
+
             }
             catch (Exception e)
             {
@@ -85,34 +87,39 @@ namespace SudentClubApp
             }
         }
 
+
+        public void RefreshPrompt()
+        {
+            Console.WriteLine($"1). Add   2). Delete  3). Edit  4). List");
+        }
+
         public void DeleteStudentOption()
         {
-            Console.Write("ID of Student to Remove: ");
-            Int32.TryParse(Console.ReadLine(), out int idRemove);
+            Console.Write("ID or Index of Student to Remove: ");
+            int id, idRemove;
+            Int32.TryParse(Console.ReadLine(), out idRemove);
+            id = idRemove;
+
+            //Students.RemoveAt(--idRemove);
+            Students.RemoveAt(idRemove);
 
 
-            Students.RemoveAt(--idRemove);
-
+            Console.WriteLine("---------------");
             foreach (var s in Students)
             {
                 Console.WriteLine(s);
             }
+            Console.WriteLine($"--- ID #{id} Successfully Removed ---");
+            RefreshPrompt();
+
         }
 
 
         public void EditStudent()
         {
-            int idEdit2 = 2;
-            Console.WriteLine("ID of Student to Edit: ");
+            Console.WriteLine("ID or Index of Student to Edit: ");
             int idEdit = Convert.ToInt32(Console.ReadLine());
-            // int id, idEdit;
-            // Int32.TryParse(Console.ReadLine(), out id);
-            // Int32.TryParse(Console.ReadLine(), out idEdit);
-            // --idEdit;
-            idEdit--;
-
-            //Students[idEdit].Id = id;
-
+    
             Console.WriteLine("New First Name: ");
             Students[idEdit].FirstName = Console.ReadLine();
             Console.WriteLine("New Last Name: ");
@@ -120,6 +127,9 @@ namespace SudentClubApp
 
             Console.WriteLine("New Email: ");
             Students[idEdit].Email = Console.ReadLine();
+            
+            Console.WriteLine($"--- Index #{Students[idEdit].Id} Successfully Editted ---");
+            RefreshPrompt();
         }
 
         public void ListStudentsOption()
@@ -132,6 +142,9 @@ namespace SudentClubApp
                     {
                         Console.WriteLine(s);
                     }
+
+                    Console.WriteLine($"------{Students.Count} Students in List-------");
+                    RefreshPrompt();
                 }
             }
             catch (Exception e)
@@ -167,38 +180,60 @@ namespace SudentClubApp
         static void Main(string[] args)
         {
             Program p = new Program();
+            //Students = new List<Student>();
+            p.Students.Add(new Student("Andy", "Gunn", "andrewgun31@gmail.com"));
+            p.Students.Add(new Student("Boby", "Gunn", "bobby@gmail.com"));
+            p.Students.Add(new Student("mom", "mom", "@gmail.com"));
+            p.Students.Add(new Student("dad", "dad", "gmail.com"));
 
+            //int choice = p.HomeList();
 
-            int choice = p.HomeList();
-
-            switch (choice)
+            int option = 0;
+            Console.WriteLine("--------------------------");
+            Console.WriteLine($"Student Club Management");
+            Console.WriteLine($"1. Add Student");
+            Console.WriteLine($"2. Delete Student");
+            Console.WriteLine($"3. Edit Student");
+            Console.WriteLine($"4. List Students");
+            Console.WriteLine($"5. Read From File");
+            Console.WriteLine($"6. Write List to File");
+            Console.WriteLine($"7. Exit");
+            do
             {
-                case 1:
-                    p.AddStudentOption();
-                    break;
-                case 2:
-                    p.ListStudentsOption();
-                    p.DeleteStudentOption();
+                
 
-                    break;
-                case 3:
-                    p.ListStudentsOption();
+                Int32.TryParse(Console.ReadLine(), out option);
 
-                    p.EditStudent();
-                    p.ListStudentsOption();
-                    break;
-                case 4:
-                    p.ListStudentsOption();
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;
-                default:
-                    break;
-            }
+                //return option;
+                switch (option)
+                {
+                    case 1:
+                        p.AddStudentOption();
+                        break;
+                    case 2:
+                        p.ListStudentsOption();
+                        p.DeleteStudentOption();
+
+                        break;
+                    case 3:
+                        p.ListStudentsOption();
+
+                        p.EditStudent();
+                        p.ListStudentsOption();
+                        break;
+                    case 4:
+                        p.ListStudentsOption();
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    default:
+                        break;
+                }
+            } while (option != 7 && option != 0);
         }
     }
 }
