@@ -35,7 +35,7 @@ namespace StudentClubApp
             Writer?.Dispose();
         }
 
-        public void WriteToFile(List<Student> students, bool append = true)
+        public void WriteToFile(List<Student> students, bool append = false)
         {
             
             Writer = new StreamWriter(FilePath, append);

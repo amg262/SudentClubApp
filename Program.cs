@@ -77,7 +77,6 @@ namespace SudentClubApp
 
                 //csv.WriteToFile(Students, true);
                 RefreshPrompt();
-
             }
             catch (Exception e)
             {
@@ -90,7 +89,7 @@ namespace SudentClubApp
 
         public void RefreshPrompt()
         {
-            Console.WriteLine($"1). Add   2). Delete  3). Edit  4). List");
+            Console.WriteLine($"1). Add   2). Delete  3). Edit  4). List  5). Exit");
         }
 
         public void DeleteStudentOption()
@@ -109,9 +108,9 @@ namespace SudentClubApp
             {
                 Console.WriteLine(s);
             }
+
             Console.WriteLine($"--- ID #{id} Successfully Removed ---");
             RefreshPrompt();
-
         }
 
 
@@ -119,7 +118,7 @@ namespace SudentClubApp
         {
             Console.WriteLine("ID or Index of Student to Edit: ");
             int idEdit = Convert.ToInt32(Console.ReadLine());
-    
+
             Console.WriteLine("New First Name: ");
             Students[idEdit].FirstName = Console.ReadLine();
             Console.WriteLine("New Last Name: ");
@@ -127,7 +126,7 @@ namespace SudentClubApp
 
             Console.WriteLine("New Email: ");
             Students[idEdit].Email = Console.ReadLine();
-            
+
             Console.WriteLine($"--- Index #{Students[idEdit].Id} Successfully Editted ---");
             RefreshPrompt();
         }
@@ -195,13 +194,9 @@ namespace SudentClubApp
             Console.WriteLine($"2. Delete Student");
             Console.WriteLine($"3. Edit Student");
             Console.WriteLine($"4. List Students");
-            Console.WriteLine($"5. Read From File");
-            Console.WriteLine($"6. Write List to File");
-            Console.WriteLine($"7. Exit");
+            Console.WriteLine($"5. Exit");
             do
             {
-                
-
                 Int32.TryParse(Console.ReadLine(), out option);
 
                 //return option;
@@ -209,6 +204,7 @@ namespace SudentClubApp
                 {
                     case 1:
                         p.AddStudentOption();
+                        p.ListStudentsOption();
                         break;
                     case 2:
                         p.ListStudentsOption();
@@ -217,7 +213,6 @@ namespace SudentClubApp
                         break;
                     case 3:
                         p.ListStudentsOption();
-
                         p.EditStudent();
                         p.ListStudentsOption();
                         break;
@@ -226,14 +221,22 @@ namespace SudentClubApp
                         break;
                     case 5:
                         break;
-                    case 6:
-                        break;
-                    case 7:
-                        break;
                     default:
                         break;
                 }
-            } while (option != 7 && option != 0);
+            } while (option != 5 && option != 0);
+
+
+            Console.WriteLine("Enter Name of CSV file to generate: ");
+            string filePath = Console.ReadLine() + ".csv";
+            StudentFile csv = new StudentFile(filePath);
+            csv.WriteToFile(p.Students);
+
+            Console.WriteLine($"Writing....");
+            Console.WriteLine($"Writing...");
+            Console.WriteLine($"Writing..");
+            Console.WriteLine(
+                $"Writing Complete! {filePath} is definitely saved somewhere in this directory..depending on what version of .NET is running. Check /bin/debug/net5.0/{filePath}");
         }
     }
 }
